@@ -1,0 +1,135 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+h1{
+    color: aliceblue;
+    text-shadow: 3px 4px 10px rgb(66, 65, 65);
+    cursor: pointer;
+    font-size: 4rem;
+    padding: 0 10rem;
+    transition: 3s;
+}
+h1:hover{
+    font-size: 500%;
+    color:rgb(25, 23, 23);
+}
+
+#wrapper{
+    height: 100vh;
+    overflow-x: hidden;
+    overflow-y: auto;
+    perspective: 10px;
+}
+
+.background{
+    transform:translateZ(-40px) scale(5);
+}
+
+.foreground{
+    transform: translateZ(-20px) scale(3);
+}
+
+.container{
+    position: relative;
+    display: flex;
+    align-items: center;
+    height: 100%;
+    justify-content: center;
+    transform-style: preserve-3d;
+    z-index: -1;
+}
+
+.background, .foreground{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    z-index: -1;
+    object-fit: 100%;
+}
+
+section{
+    background-color: rgb(45,45,45);
+    color: white;
+    padding: 5rem 0;
+}
+
+.bg{
+    position: relative;
+    width: 100%;
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+    height: 500px;
+}
+
+.bg1{
+    background-image: url(sport-1.jpg);
+}
+
+.bg2{
+    background-image: url(sport-2.jpg);
+}
+
+.bg3{
+    background-image: url(sport-3.jpg);
+}
+
+.secHead{
+    margin-left: 20%;
+    cursor: pointer;
+    font-size: 4rem;
+    padding: 0 10rem;
+    transition: 3s;
+}
+
+.secHead:hover{
+    transform:perspective(350px)  scaleZ(3) rotateX(390deg) rotateY(-50deg);
+    color: rgb(35, 97, 159);
+}
+
+.text{
+    font-size: 1.5rem;
+    padding: 0 10rem;
+    margin: 5rem 0;
+    animation-name: Krashna;
+animation-duration: 5s;
+animation-iteration-count: infinite;
+/* animation-timing-function: ease-in; */
+/* animation-delay: 1s;*/
+animation-direction: normal;
+}
+
+@keyframes Krashna {
+    from {
+        /* pushes the sun down past the viewport */
+        transform: translateX(-110vh);
+        background-image:linear-gradient(white,gray);
+        text-shadow: 5px 1px 5px rgb(0, 0, 0);
+      }
+      to {
+        /* returns the sun to its default position */
+        transform: translateX(0);
+        
+      }
+}
+
+.desc{
+    position: absolute;
+    background-color: white;
+    padding: 0.5rem 2.5rem;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-40px) translateX(-40px);
+    color: black;
+    font-weight: 600;
+}
+
+.desc:hover{
+    background-image: linear-gradient(blue,green,yellow);
+    color: aliceblue;
+    border-radius: 20px;
+}
+
